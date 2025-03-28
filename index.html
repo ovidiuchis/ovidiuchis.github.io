@@ -13,84 +13,145 @@
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Email obfuscation
         const username = 'ovidiuchis';
         const domain = 'icloud.com';
         const emailElement = document.getElementById('contact-email');
         const emailLink = document.getElementById('email-link');
         
-        const email = `${username}@${domain}`;
-        emailElement.textContent = email;
-        emailLink.href = `mailto:${email}`;
+        function updateEmail() {
+          const email = `${username}@${domain}`;
+          emailElement.textContent = email;
+          emailLink.href = `mailto:${email}`;
+        }
+
+        // Set initial email
+        updateEmail();
+
+        // Language switching
+        const languageSelector = document.getElementById('language-selector');
+        const translations = {
+          en: {
+            title: 'Ovidiu Chiș - Software professional',
+            tagline: 'empowering organizations with digital tools',
+            skills: 'Skills',
+            experience: 'Experience',
+            contact: 'Contact',
+            reachOut: 'Feel free to reach out',
+            loading: 'Loading...',
+            fromCluj: '❤️ from',
+            skillsList: [
+              'T-SQL',
+              'System and database design',
+              'Balance engineering & business objectives',
+              'Process optimization',
+              'Team development'
+            ],
+            experienceList: [
+              `Skilled data engineer (<a href="https://www.microsoft.com/en-us/sql-server" target="_blank">SQL Server</a>, <a href="https://azure.microsoft.com/en-us/products/azure-sql/database/" target="_blank">Azure SQL</a>, <a href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">Power Platform & BI</a>)`,
+              `Well-versed in ERP development and consulting (over 40 <a href="https://www.asw.ro/clienti/" target="_blank">completed projects</a>)`,
+              'Over 15 years in digital transformation'
+            ]
+          },
+          ro: {
+            title: 'Ovidiu Chiș - Profesionist software',
+            tagline: 'echipez companii cu instrumente digitale',
+            skills: 'Competențe',
+            experience: 'Experiență',
+            contact: 'Contact',
+            reachOut: 'Contactează-mă aici',
+            loading: 'Se încarcă...',
+            fromCluj: '❤️ din',
+            skillsList: [
+              'T-SQL',
+              'Proiectare sisteme și baze de date',
+              'Alinierea obiectivelor tehnice cu cele de business',
+              'Optimizare de procese',
+              'Dezvoltare de echipe'
+            ],
+            experienceList: [
+              `Inginer de date experimentat (<a href="https://www.microsoft.com/en-us/sql-server" target="_blank">SQL Server</a>, <a href="https://azure.microsoft.com/en-us/products/azure-sql/database/" target="_blank">Azure SQL</a>, <a href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">Power Platform & BI</a>)`,
+              `Experiență în dezvoltare și consultanță ERP (peste 40 de <a href="https://www.asw.ro/clienti/" target="_blank">proiecte finalizate</a>)`,
+              'De peste 15 ani proiecte de digitalizare'
+            ]
+          }
+        };
+
+        function updateLanguage(lang) {
+          // Add transition class
+          document.body.classList.add('language-transition');
+          
+          // Update content
+          document.title = translations[lang].title;
+          document.querySelector('header p').innerHTML = `${translations[lang].tagline} <a href="https://asw.ro/" style="color: #ed3c47">@Alfa Software</a>`;
+          document.querySelector('section:nth-of-type(1) h2').textContent = translations[lang].skills;
+          document.querySelector('section:nth-of-type(2) h2').textContent = translations[lang].experience;
+          document.querySelector('section:nth-of-type(3) h2').textContent = translations[lang].contact;
+          document.querySelector('section:nth-of-type(3) p').textContent = translations[lang].reachOut;
+          document.querySelector('.cj').previousSibling.textContent = translations[lang].fromCluj + ' ';
+
+          // Update skills list
+          const skillsList = document.querySelector('section:nth-of-type(1) ul');
+          skillsList.innerHTML = translations[lang].skillsList.map(skill => `<li>${skill}</li>`).join('');
+
+          // Update experience list
+          const experienceList = document.querySelector('section:nth-of-type(2) ul');
+          experienceList.innerHTML = translations[lang].experienceList.map(exp => `<li>${exp}</li>`).join('');
+
+          // Remove transition class after animation
+          setTimeout(() => {
+            document.body.classList.remove('language-transition');
+            // Update email after transition is complete
+            updateEmail();
+          }, 300);
+        }
+
+        languageSelector.addEventListener('change', function() {
+          updateLanguage(this.value);
+        });
+
+        // Set initial language
+        updateLanguage(languageSelector.value);
       });
     </script>
   </head>
   <body>
     <header>
+      <div class="language-selector">
+        <select id="language-selector" title="Select language">
+          <option value="en">🇬🇧</option>
+          <option value="ro">🇷🇴</option>
+        </select>
+      </div>
       <img src="assets/me.png" alt="Ovidiu Chiș" />
       <h1>Ovidiu Chiș</h1>
-      <p>
-        empowering organizations with digital tools
-        <a href="https://asw.ro/" style="color: #ed3c47">@Alfa Software</a>
-      </p>
+      <p></p>
     </header>
 
     <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>T-SQL</li>
-        <li>System and database design</li>
-        <li>Balance engineering & business objectives</li>
-        <li>Process optimization</li>
-        <li>Team development</li>
-      </ul>
+      <h2></h2>
+      <ul></ul>
     </section>
 
     <section>
-      <h2>Experience</h2>
-      <ul>
-        <li>
-          Skilled data engineer (<a
-            href="https://www.microsoft.com/en-us/sql-server"
-            target="_blank"
-          >
-            SQL Server</a
-          >,
-          <a
-            href="https://azure.microsoft.com/en-us/products/azure-sql/database/"
-            target="_blank"
-            >Azure SQL</a
-          >,
-          <a
-            href="https://www.microsoft.com/en-us/power-platform/products/power-bi"
-            target="_blank"
-            >Power Platform & BI</a
-          >
-          )
-        </li>
-        <li>
-          Well-versed in ERP development and consulting (over 40
-          <a href="https://www.asw.ro/clienti/" target="_blank">
-            completed projects</a
-          >)
-        </li>
-        <li>Over 15 years in digital transformation</li>
-      </ul>
+      <h2></h2>
+      <ul></ul>
     </section>
+
     <section>
-      <h2>Contact</h2>
-      <p>Feel free to reach out</p>
+      <h2></h2>
+      <p></p>
       <ul>
         <li>📧 <a id="email-link" href="#"><span id="contact-email">Loading...</span></a></li>
       </ul>
     </section>
+
     <footer id="dinfooter">
       <div class="social-links">
         <a href="https://github.com/ovidiuchis" target="_blank">github</a>
-        <a href="https://www.linkedin.com/in/ovidiuchis/" target="_blank"
-          >linkedin</a
-        >
+        <a href="https://www.linkedin.com/in/ovidiuchis/" target="_blank">linkedin</a>
         <br />
-        ❤️ from<a href="https://visitcluj.ro/" class="cj">cluj</a>
+        <span></span><a href="https://visitcluj.ro/" class="cj">cluj</a>
       </div>
     </footer>
   </body>

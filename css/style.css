@@ -67,3 +67,50 @@ footer {
   color: #aaaa;
   padding: 5px;
 }
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.language-selector select {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  min-width: 45px;
+}
+.language-selector select:hover {
+  border-color: #666;
+}
+.language-selector select:focus {
+  border-color: #ed3c47;
+}
+
+/* Language transition styles */
+.language-transition section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.language-transition header {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+header {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
