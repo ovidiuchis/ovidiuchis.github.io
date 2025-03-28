@@ -11,6 +11,18 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const username = 'ovidiuchis';
+        const domain = 'icloud.com';
+        const emailElement = document.getElementById('contact-email');
+        const emailLink = document.getElementById('email-link');
+        
+        const email = `${username}@${domain}`;
+        emailElement.textContent = email;
+        emailLink.href = `mailto:${email}`;
+      });
+    </script>
   </head>
   <body>
     <header>
@@ -62,6 +74,13 @@
           >)
         </li>
         <li>Over 15 years in digital transformation</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <p>Feel free to reach out</p>
+      <ul>
+        <li>📧 <a id="email-link" href="#"><span id="contact-email">Loading...</span></a></li>
       </ul>
     </section>
     <footer id="dinfooter">
