@@ -83,19 +83,19 @@
           
           // Update content
           document.title = translations[lang].title;
-          document.querySelector('header p').innerHTML = `${translations[lang].tagline} <a href="https://asw.ro/" style="color: #ed3c47">@Alfa Software</a>`;
-          document.querySelector('section:nth-of-type(1) h2').textContent = translations[lang].skills;
-          document.querySelector('section:nth-of-type(2) h2').textContent = translations[lang].experience;
-          document.querySelector('section:nth-of-type(3) h2').textContent = translations[lang].contact;
-          document.querySelector('section:nth-of-type(3) p').textContent = translations[lang].reachOut;
-          document.querySelector('.cj').previousSibling.textContent = translations[lang].fromCluj + ' ';
+          document.getElementById('tagline').innerHTML = `${translations[lang].tagline} <a href="https://asw.ro/" style="color: #ed3c47" target="_blank">@Alfa Software</a>`;
+          document.getElementById('skills-title').textContent = translations[lang].skills;
+          document.getElementById('experience-title').textContent = translations[lang].experience;
+          document.getElementById('contact-title').textContent = translations[lang].contact;
+          document.getElementById('contact-text').textContent = translations[lang].reachOut;
+          document.getElementById('from-cluj').textContent = translations[lang].fromCluj;
 
           // Update skills list
-          const skillsList = document.querySelector('section:nth-of-type(1) ul');
+          const skillsList = document.getElementById('skills-list');
           skillsList.innerHTML = translations[lang].skillsList.map(skill => `<li>${skill}</li>`).join('');
 
           // Update experience list
-          const experienceList = document.querySelector('section:nth-of-type(2) ul');
+          const experienceList = document.getElementById('experience-list');
           experienceList.innerHTML = translations[lang].experienceList.map(exp => `<li>${exp}</li>`).join('');
 
           // Remove transition class after animation
@@ -125,22 +125,22 @@
       </div>
       <img src="assets/me.png" alt="Ovidiu Chiș" />
       <h1>Ovidiu Chiș</h1>
-      <p></p>
+      <p id="tagline"></p>
     </header>
 
     <section>
-      <h2></h2>
-      <ul></ul>
+      <h2 id="skills-title"></h2>
+      <ul id="skills-list"></ul>
     </section>
 
     <section>
-      <h2></h2>
-      <ul></ul>
+      <h2 id="experience-title"></h2>
+      <ul id="experience-list"></ul>
     </section>
 
     <section>
-      <h2></h2>
-      <p></p>
+      <h2 id="contact-title"></h2>
+      <p id="contact-text"></p>
       <ul>
         <li>📧 <a id="email-link" href="#"><span id="contact-email">Loading...</span></a></li>
       </ul>
@@ -151,7 +151,7 @@
         <a href="https://github.com/ovidiuchis" target="_blank">github</a>
         <a href="https://www.linkedin.com/in/ovidiuchis/" target="_blank">linkedin</a>
         <br />
-        <span></span><a href="https://visitcluj.ro/" class="cj">cluj</a>
+        <span id="from-cluj"></span><a href="https://visitcluj.ro/" class="cj">cluj</a>
       </div>
     </footer>
   </body>
