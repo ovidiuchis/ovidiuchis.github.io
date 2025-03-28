@@ -15,6 +15,8 @@ De asemenea, un bun exercitiu in HTML, CSS, Javascript.
 
 ## 🛠 Tehnologii folosite
 
+🛠️ Început ca un experiment de utilizare a IDE-ului [Cursor - The AI Code Editor] (https://www.cursor.com/)
+
 - HTML5
 - CSS3
 - JavaScript
