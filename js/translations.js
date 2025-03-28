@@ -40,7 +40,7 @@ const translations = {
     experienceList: [
       `Inginer de date experimentat (<a href="https://www.microsoft.com/en-us/sql-server" target="_blank">SQL Server</a>, <a href="https://azure.microsoft.com/en-us/products/azure-sql/database/" target="_blank">Azure SQL</a>, <a href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">Power Platform & BI</a>)`,
       `Experiență în dezvoltare și consultanță ERP (peste 40 de <a href="https://www.asw.ro/clienti/" target="_blank">proiecte finalizate</a>)`,
-      'De peste 15 ani proiecte de digitalizare'
+      'De peste 15 ani în proiecte de digitalizare'
     ]
   }
 }; 
