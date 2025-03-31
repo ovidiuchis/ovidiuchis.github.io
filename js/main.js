@@ -2,12 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Email obfuscation
   const username = "ovidiuchis";
   const domain = "icloud.com";
-  const emailElement = document.getElementById("contact-email");
   const emailLink = document.getElementById("email-link");
 
   function updateEmail() {
     const email = `${username}@${domain}`;
-    emailElement.textContent = email;
     emailLink.href = `mailto:${email}`;
   }
 
@@ -29,10 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       translations[lang].skills;
     document.getElementById("experience-title").textContent =
       translations[lang].experience;
-    document.getElementById("contact-title").textContent =
-      translations[lang].contact;
-    document.getElementById("contact-text").textContent =
-      translations[lang].reachOut;
     document.getElementById("from-cluj").textContent =
       translations[lang].fromCluj;
 
