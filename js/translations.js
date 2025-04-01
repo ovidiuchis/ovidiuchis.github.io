@@ -6,7 +6,6 @@ const translations = {
     experience: "Experience",
     contact: "Contact",
     loading: "Loading...",
-    fromCluj: "❤️ from",
     skillsList: [
       "T-SQL",
       "System and database design",
@@ -27,7 +26,6 @@ const translations = {
     experience: "Experiență",
     contact: "Contact",
     loading: "Se încarcă...",
-    fromCluj: "❤️ din",
     skillsList: [
       "T-SQL",
       "Proiectare sisteme și baze de date",

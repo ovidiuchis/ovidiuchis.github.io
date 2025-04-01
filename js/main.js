@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       translations[lang].skills;
     document.getElementById("experience-title").textContent =
       translations[lang].experience;
-    document.getElementById("from-cluj").textContent =
-      translations[lang].fromCluj;
 
     // Update skills list
     const skillsList = document.getElementById("skills-list");
