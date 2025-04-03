@@ -6,6 +6,9 @@ const translations = {
     experience: "Experience",
     contact: "Contact",
     loading: "Loading...",
+    quickbuilds: "Quick builds",
+    quickbuildsdescription:
+      'I occasionally take a few hours to build small tools or test an idea. Some of them end up on my <a href="https://github.com/ovidiuchis" target="_blank">GitHub</a> 🚀.',
     skillsList: [
       "T-SQL",
       "System and database design",
@@ -26,6 +29,8 @@ const translations = {
     experience: "Experiență",
     contact: "Contact",
     loading: "Se încarcă...",
+    quickbuilds: "Proiecte rapide",
+    quickbuildsdescription: `Din când în când, îmi rezerv câteva ore ca să construiesc unelte simple sau să testez o idee. Unele dintre ele ajung pe <a href="https://github.com/ovidiuchis" target="_blank">GitHub</a> 🚀.`,
     skillsList: [
       "T-SQL",
       "Proiectare sisteme și baze de date",

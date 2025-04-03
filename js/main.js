@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
       .map((exp) => `<li>${exp}</li>`)
       .join("");
 
+    //update quickbuilds
+    document.getElementById("quick-builds-title").textContent =
+      translations[lang].quickbuilds;
+    document.getElementById("quick-builds-description").innerHTML =
+      translations[lang].quickbuildsdescription;
+
     // Update email
     updateEmail();
 
