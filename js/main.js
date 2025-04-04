@@ -58,9 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   languageSelector.addEventListener("change", function () {
-    updateLanguage(this.value);
+    const selectedLang = this.value;
+    localStorage.setItem("preferredLanguage", selectedLang);
+    updateLanguage(selectedLang);
   });
 
-  // Set initial language without animation
-  updateLanguage(languageSelector.value, true);
+  // Set initial language with saved preference
+  const savedLang =
+    localStorage.getItem("preferredLanguage") || languageSelector.value;
+  languageSelector.value = savedLang;
+  updateLanguage(savedLang, true);
 });
