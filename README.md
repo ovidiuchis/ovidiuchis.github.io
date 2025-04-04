@@ -5,6 +5,7 @@
 Site-ul meu personal - o carte de vizită digitală construită cu grijă pentru claritate, simplitate și impact. 
 
 De asemenea, un bun exercitiu in HTML, CSS, Javascript.
+---
 
 ## 🔍 Ce vei găsi aici
 
@@ -21,6 +22,12 @@ De asemenea, un bun exercitiu in HTML, CSS, Javascript.
 - CSS3
 - JavaScript
 - GitHub Pages (pentru hosting)
+  
+## ✅ TODO
+
+- [ ] Dark mode with toggle
+- [ ] Include interesting projects
+- [ ] Add a live contact form
 
 ## 🚀 Cum rulezi local
 
