@@ -8,8 +8,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ctext y='28' font-size='32'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E"
@@ -21,7 +25,11 @@
   <body>
     <header>
       <div class="language-selector">
-        <select id="language-selector" title="Select language">
+        <select
+          id="language-selector"
+          title="Select language"
+          aria-label="Language Selector"
+        >
           <option value="en">🇬🇧</option>
           <option value="ro">🇷🇴</option>
         </select>
@@ -47,32 +55,43 @@
     </section>
 
     <footer>
-      <div class="social-links">
-        <a href="https://github.com/ovidiuchis" target="_blank"
-          ><img
+      <nav class="social-links" aria-label="Social Links">
+        <a
+          href="https://github.com/ovidiuchis"
+          target="_blank"
+          aria-label="GitHub Profile"
+        >
+          <img
             src="assets/git.png"
             width="25"
             height="25"
             alt="GitHub"
             style="vertical-align: middle"
-        /></a>
-        <a href="https://www.linkedin.com/in/ovidiuchis/" target="_blank"
-          ><img
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ovidiuchis/"
+          target="_blank"
+          aria-label="LinkedIn Profile"
+        >
+          <img
             src="assets/in.png"
             width="25"
             height="25"
             alt="Linkedin"
             style="vertical-align: middle"
-        /></a>
-        <a href="#" target="_blank" id="email-link"
-          ><img
+          />
+        </a>
+        <a href="#" target="_blank" id="email-link" aria-label="Email">
+          <img
             src="assets/mail.png"
             width="25"
             height="25"
             alt="Email"
             style="vertical-align: middle"
-        /></a>
-      </div>
+          />
+        </a>
+      </nav>
     </footer>
   </body>
 </html>
