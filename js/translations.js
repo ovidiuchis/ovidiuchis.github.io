@@ -9,6 +9,8 @@ const translations = {
     quickbuilds: "Quick builds",
     quickbuildsdescription:
       'I occasionally take a few hours to build small tools or test an idea. Some of them end up on my <a href="https://github.com/ovidiuchis" target="_blank">GitHub</a> 🚀.',
+    contactdescription:
+      'Check out relevant links in the footer below or <a href="assets/ovidiu_chis.vcf" download="ovidiu_chis.vcf"> download my contact card right here</a>!',
     skillsList: [
       "T-SQL",
       "System and database design",
@@ -31,6 +33,8 @@ const translations = {
     loading: "Se încarcă...",
     quickbuilds: "Proiecte rapide",
     quickbuildsdescription: `Din când în când, îmi rezerv câteva ore ca să construiesc unelte simple sau să testez o idee. Unele dintre ele ajung pe <a href="https://github.com/ovidiuchis" target="_blank">GitHub</a> 🚀.`,
+    contactdescription:
+      'Verifică linkurile relevante din footerul de mai jos <a href="assets/ovidiu_chis.vcf" download="ovidiu_chis.vcf">sau descară cartea mea de vizită aici</a>!',
     skillsList: [
       "T-SQL",
       "Proiectare sisteme și baze de date",

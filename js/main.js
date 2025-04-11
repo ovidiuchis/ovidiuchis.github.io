@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
       translations[lang].quickbuilds;
     document.getElementById("quick-builds-description").innerHTML =
       translations[lang].quickbuildsdescription;
-
+    document.getElementById("contact-description").innerHTML =
+      translations[lang].contactdescription;
     // Update email
     updateEmail();
 
