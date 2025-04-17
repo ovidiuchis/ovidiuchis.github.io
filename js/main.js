@@ -40,13 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .map((exp) => `<li>${exp}</li>`)
       .join("");
 
-    //update quickbuilds
-    document.getElementById("quick-builds-title").textContent =
-      translations[lang].quickbuilds;
-    document.getElementById("quick-builds-description").innerHTML =
-      translations[lang].quickbuildsdescription;
-    document.getElementById("contact-description").innerHTML =
-      translations[lang].contactdescription;
+    // Update tech contact section
+    document.getElementById("tech-contact-title").textContent =
+      translations[lang].techtitle;
+
+    // Update tech contact list
+    const techContactList = document.getElementById("tech-contact-list");
+    techContactList.innerHTML = translations[lang].techlist
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
     // Update email
     updateEmail();
 
