@@ -20,35 +20,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update content
     document.title = translations[lang].title;
+    document.querySelector(".role").textContent = translations[lang].role;
     document.getElementById(
       "tagline"
     ).innerHTML = `${translations[lang].tagline} <a href="https://asw.ro/" style="color: #ed3c47" target="_blank">@Alfa Software</a>`;
-    document.getElementById("skills-title").textContent =
-      translations[lang].skills;
-    document.getElementById("experience-title").textContent =
-      translations[lang].experience;
+    document.getElementById("skills-title").textContent = translations[lang].skills;
+    document.getElementById("experience-title").textContent = translations[lang].experience;
 
     // Update skills list
     const skillsList = document.getElementById("skills-list");
-    skillsList.innerHTML = translations[lang].skillsList
-      .map((skill) => `<li>${skill}</li>`)
-      .join("");
+    skillsList.innerHTML = translations[lang].skillsList.map(skill => `<li>${skill}</li>`).join("");
 
     // Update experience list
     const experienceList = document.getElementById("experience-list");
-    experienceList.innerHTML = translations[lang].experienceList
-      .map((exp) => `<li>${exp}</li>`)
-      .join("");
+    experienceList.innerHTML = translations[lang].experienceList.map(exp => `<li>${exp}</li>`).join("");
 
     // Update tech contact section
-    document.getElementById("tech-contact-title").textContent =
-      translations[lang].techtitle;
+    document.getElementById("tech-contact-title").textContent = translations[lang].techtitle;
 
     // Update tech contact list
     const techContactList = document.getElementById("tech-contact-list");
-    techContactList.innerHTML = translations[lang].techlist
-      .map((item) => `<li>${item}</li>`)
-      .join("");
+    techContactList.innerHTML = translations[lang].techlist.map(item => `<li>${item}</li>`).join("");
 
     // Update email
     updateEmail();
@@ -68,8 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Set initial language with saved preference
-  const savedLang =
-    localStorage.getItem("preferredLanguage") || languageSelector.value;
+  const savedLang = localStorage.getItem("preferredLanguage") || languageSelector.value;
   languageSelector.value = savedLang;
   updateLanguage(savedLang, true);
 });

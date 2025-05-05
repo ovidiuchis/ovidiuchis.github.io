@@ -11,7 +11,6 @@ header {
   margin: 1.5rem auto;
   padding: 1rem;
   border-radius: 12px;
-  /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07); */
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -25,7 +24,14 @@ header img {
 
 h1 {
   font-size: 2rem;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0.2rem;
+}
+
+header .role {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #0077b5;
+  font-weight: 500;
 }
 
 .tagline {
@@ -39,7 +45,7 @@ h1 {
   text-align: center;
 }
 
-social-links a {
+.social-links a {
   margin: 0 0.5rem;
   color: #0077b5;
   text-decoration: none;
@@ -93,7 +99,6 @@ footer {
   margin: 1.5rem auto;
   padding: 1rem;
   border-radius: 12px;
-  /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07); */
   text-align: center;
 }
 
