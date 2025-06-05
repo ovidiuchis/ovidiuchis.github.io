@@ -23,7 +23,15 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install
 
-      - name: Build blog with Jekyll (explicit)
+      - name: Build blog with Jekyll
         run: |
           cd medium-src
           bundle exec jekyll build --config _config.yml --destination ../medium
+
+      - name: Commit and push medium folder to main branch
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add medium
+          git commit -m "Update /medium blog build" || echo "No changes to commit"
+          git push origin main
