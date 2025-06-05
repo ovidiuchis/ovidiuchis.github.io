@@ -20,13 +20,6 @@ jobs:
       - name: Install dependencies
         run: |
           cd medium-src
-          bundle init
-          echo 'gem "jekyll"' >> Gemfile
-          echo 'gem "jekyll-paginate"' >> Gemfile
-          echo 'gem "jekyll-seo-tag"' >> Gemfile
-          echo 'gem "jekyll-feed"' >> Gemfile
-          echo 'gem "jekyll-sitemap"' >> Gemfile
-          echo 'gem "jekyll-archives"' >> Gemfile
           bundle install
 
       - name: Build blog with Jekyll
