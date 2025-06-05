@@ -1,0 +1,35 @@
+name: Build Medium Blog
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+
+      - name: Install dependencies
+        run: |
+          cd medium-src
+          bundle init
+          echo 'gem "jekyll"' >> Gemfile
+          echo 'gem "jekyll-paginate"' >> Gemfile
+          echo 'gem "jekyll-seo-tag"' >> Gemfile
+          echo 'gem "jekyll-feed"' >> Gemfile
+          echo 'gem "jekyll-sitemap"' >> Gemfile
+          echo 'gem "jekyll-archives"' >> Gemfile
+          bundle install
+
+      - name: Build blog with Jekyll
+        run: |
+          cd medium-src
+          bundle exec jekyll build --destination ../medium
