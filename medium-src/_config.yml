@@ -24,6 +24,8 @@ authors:
     description: "Consultant ERP, pasionat de Scriptură, tehnologie și ucenicie digitală."
 sass:
   sass_dir: _sass
+theme: null
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
