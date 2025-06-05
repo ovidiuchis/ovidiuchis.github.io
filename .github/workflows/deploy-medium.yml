@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,9 +30,11 @@ jobs:
           bundle exec jekyll build --config _config.yml --destination ../medium
 
       - name: Commit and push medium folder to main branch
+        env:
+          TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add medium
-          git commit -m "Update /medium blog build" || echo "No changes to commit"
-          git push origin main
+          git commit -m "Update /medium blog build" || echo "Nothing to commit"
+          git push https://x-access-token:${TOKEN}@github.com/ovidiuchis/ovidiuchis.github.io.git HEAD:main
