@@ -7,7 +7,9 @@ on:
 
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, 'Update /medium blog build')"
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository with PAT
         uses: actions/checkout@v4
@@ -28,7 +30,7 @@ jobs:
       - name: Build blog with Jekyll
         run: |
           cd medium-src
-          bundle exec jekyll build --destination ../medium
+          bundle exec jekyll build --config _config.yml --destination ../medium
 
       - name: Commit and push medium folder to main branch
         env:
