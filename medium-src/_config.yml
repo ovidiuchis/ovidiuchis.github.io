@@ -22,7 +22,8 @@ authors:
     twitter: https://twitter.com/ovidiuchis
     avatar: "assets/images/avatar.png" # poți adăuga o imagine proprie aici
     description: "Consultant ERP, pasionat de Scriptură, tehnologie și ucenicie digitală."
-
+sass:
+  sass_dir: _sass
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
