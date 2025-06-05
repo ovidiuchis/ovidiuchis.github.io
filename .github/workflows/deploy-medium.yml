@@ -20,9 +20,10 @@ jobs:
       - name: Install dependencies
         run: |
           cd medium-src
+          bundle config set --local path 'vendor/bundle'
           bundle install
 
-      - name: Build blog with Jekyll
+      - name: Build blog with Jekyll (explicit)
         run: |
           cd medium-src
-          bundle exec jekyll build --destination ../medium
+          bundle exec jekyll build --config _config.yml --destination ../medium
