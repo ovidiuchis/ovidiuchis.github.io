@@ -3,60 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Ovidiu Chiș – Engineering Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-
     <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-    <script src="js/translations.js"></script>
-    <script src="js/main.js"></script>
   </head>
   <body>
-    <header>
-      <div class="language-selector">
-        <select id="language-selector" title="Select language" aria-label="Language Selector">
-          <option value="en">🇬🇧</option>
-          <option value="ro">🇷🇴</option>
-        </select>
-      </div>
-      <img src="assets/me.png" alt="Ovidiu Chiș" />
+    <main class="linktree-container">
+      <img src="assets/me.png" alt="Ovidiu Chiș" class="avatar" />
       <h1>Ovidiu Chiș</h1>
-      <h2 class="role"></h2>
-      <p id="tagline" class="tagline"></p>
-    </header>
-
-    <section>
-      <h2 id="experience-title"></h2>
-      <ul id="experience-list"></ul>
-    </section>
-
-    <section>
-      <h2 id="skills-title"></h2>
-      <ul id="skills-list"></ul>
-    </section>
-
-    <section id="tech-contact">
-      <h2 id="tech-contact-title"></h2>
-      <ul id="tech-contact-list"></ul>
-    </section>
-
-    <footer>
-      <nav class="social-links" aria-label="Social Links">
-        <a href="https://github.com/ovidiuchis" target="_blank" aria-label="GitHub Profile">
-          <img src="assets/git.png" width="25" height="25" alt="GitHub" />
+      <p class="bio">
+        With 15+ years building production systems, I help teams move from spreadsheets to robust web and operational
+        tooling—ERP/WMS and data workflows—delivering clarity, speed, and measurable impact in daily work.
+      </p>
+      <div class="icon-bar">
+        <a
+          href="https://www.linkedin.com/in/ovidiuchis/"
+          target="_blank"
+          aria-label="LinkedIn"
+          rel="noopener"
+          class="icon-link"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.02h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V23h-4v-7.08c0-1.69-.03-3.87-2.36-3.87-2.36 0-2.72 1.84-2.72 3.74V23h-4V8z"
+            />
+          </svg>
         </a>
-        <a href="https://www.linkedin.com/in/ovidiuchis/" target="_blank" aria-label="LinkedIn Profile">
-          <img src="assets/in.png" width="25" height="25" alt="Linkedin" />
+        <a href="https://github.com/ovidiuchis" target="_blank" aria-label="GitHub" rel="noopener" class="icon-link">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.5c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            />
+          </svg>
         </a>
-        <a href="#" target="_blank" id="email-link" aria-label="Email">
-          <img src="assets/mail.png" width="25" height="25" alt="Email" />
-        </a>
-        <a href="https://buymeacoffee.com/ochis" target="_blank" aria-label="Buy me a coffee">
-          <img src="assets/bmac.png" width="25" height="25" alt="Buy me a coffee" />
-        </a>
-      </nav>
-    </footer>
+      </div>
+      <a href="https://asw.ro/" target="_blank" rel="noopener" class="primary-cta btn-pill btn-narrow icon-left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M12 3l8.5 6.5v11a.5.5 0 0 1-.5.5h-5v-6h-6v6H4a.5.5 0 0 1-.5-.5v-11L12 3z" />
+        </svg>
+        @Alfa Software
+      </a>
+      <a
+        href="assets/ovidiu_chis.vcf"
+        download="ovidiu_chis.vcf"
+        class="btn-pill btn-alt btn-narrow icon-left"
+        aria-label="Save my contact information"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M12 3v12" />
+          <path d="M7 11l5 5 5-5" />
+          <path d="M5 20h14" />
+        </svg>
+        Save contact
+      </a>
+      <a href="ebio.html" class="btn-pill btn-alt btn-narrow icon-left" aria-label="Read extended biography">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path
+            d="M12 20s-5.5-3.3-8-7.4C1.3 9.2 2.1 5.8 4.7 4.5 6.6 3.5 9 4 10.6 5.6L12 7l1.4-1.4C15 4 17.4 3.5 19.3 4.5c2.6 1.3 3.4 4.7.7 8.1-2.5 4.1-8 7.4-8 7.4z"
+          />
+        </svg>
+        Extended bio
+      </a>
+    </main>
     <!-- Cloudflare Web Analytics -->
     <script
       defer
