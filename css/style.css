@@ -365,6 +365,95 @@ h1 {
   }
 }
 
+/* QR toggle components */
+.qr-card {
+  background: #fff;
+  padding: 1.1rem 1.1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  position: relative;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.qr-card.mode-professional {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow);
+}
+.qr-card.mode-personal {
+  border-color: var(--accent-alt);
+  box-shadow: 0 0 0 3px var(--accent-alt-soft), var(--shadow);
+}
+.qr-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.35s var(--ease);
+}
+.qr-image.active {
+  opacity: 1;
+  position: relative;
+}
+
+.qr-toggle {
+  display: inline-flex;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem;
+  gap: 0.35rem;
+  margin-top: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.qr-mode-btn {
+  border: none;
+  background: transparent;
+  color: var(--color-text-faint);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 0.55rem 0.95rem 0.5rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s var(--ease), background 0.25s var(--ease);
+}
+.qr-mode-btn:hover,
+.qr-mode-btn:focus {
+  color: var(--color-text);
+}
+.qr-mode-btn.active {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-alt) 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.25);
+}
+.qr-mode-btn.active[data-mode="professional"] {
+  background: var(--accent);
+}
+.qr-mode-btn.active[data-mode="personal"] {
+  background: var(--accent-alt);
+}
+
+.qr-mode-label {
+  font-size: 0.75rem;
+  margin-top: 0.8rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 560px) {
+  .qr-mode-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem 0.45rem;
+  }
+}
+
 /* Link groups */
 .link-groups {
   width: 100%;
