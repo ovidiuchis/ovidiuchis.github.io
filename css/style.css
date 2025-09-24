@@ -12,6 +12,8 @@ html {
 }
 :root {
   --radius: 18px;
+  /* New button radius for a squarer look */
+  --radius-btn: 10px;
   --ease: cubic-bezier(0.4, 0.08, 0.2, 1);
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 12px -4px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 4px 16px -4px rgba(0, 0, 0, 0.12);
@@ -57,7 +59,7 @@ footer {
   justify-content: flex-start; /* start higher */
   align-items: center; /* horizontal centering */
   padding: 1.4rem 1.2rem 2.4rem; /* reduced top & bottom */
-  max-width: 520px;
+  max-width: 680px; /* allow wider button group */
   margin: 0 auto;
   text-align: center;
   gap: 0.4rem; /* tighten vertical rhythm slightly */
@@ -138,8 +140,8 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  padding: 0.9rem 0.9rem;
-  border-radius: 999px;
+  padding: 0.9rem 1.1rem; /* equal, slightly wider horizontal padding */
+  border-radius: var(--radius-btn);
   background: var(--accent);
   color: #fff;
   font-weight: 600;
@@ -184,41 +186,50 @@ h1 {
 }
 
 /* spacing adjustment: only add bottom margin to the last button */
-.primary-cta {
-  margin: 0 0 0.6rem;
-}
+/* Unified spacing handled by .button-group now */
+.primary-cta,
 .btn-alt {
-  margin-bottom: 1.2rem;
+  margin: 0;
+}
+/* Button group wrapper for consistent vertical spacing */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 auto 1.2rem; /* preserve final breathing space below group and center */
+  width: 100%;
+  max-width: 500px;
+  align-self: stretch; /* override parent align-items center so group spans full width */
+  box-sizing: border-box;
+  padding: 0 0; /* explicit: no side padding so auto margins truly center */
+}
+/* Ensure buttons visually centered with consistent internal width */
+.button-group .btn-pill {
+  max-width: 600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Remove any residual margins from children to rely solely on gap */
+.button-group > * {
+  margin: 0 !important;
 }
 
-/* Narrow button width utility */
-.btn-narrow {
-  width: clamp(200px, 72%, 260px);
-  text-align: center;
-}
 /* Icon left alignment utility */
+/* Re-center icon + text: remove absolute positioning and asymmetric padding */
 .icon-left {
   position: relative;
-  padding-left: 2.65rem; /* reserve space for icon */
-  justify-content: center; /* keep text centered in visual width */
+  padding-left: 0.9rem; /* match horizontal padding */
+  gap: 0.55rem; /* restore natural gap */
+  justify-content: center;
 }
 .icon-left svg {
-  position: absolute;
-  left: 1.05rem;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0; /* override gap placement */
+  position: static;
+  transform: none;
+  margin: 0;
 }
-/* Reduce gap since icon is absolutely positioned */
-.icon-left {
-  gap: 0;
-}
-@media (max-width: 480px) {
-  .btn-narrow {
-    width: clamp(260px, 90%, 320px);
-    max-width: calc(100% - 1rem);
-  }
-}
+/* (Removed legacy .btn-narrow utility after full-width redesign) */
 
 /* Back to top button */
 .back-to-top {
@@ -420,7 +431,7 @@ h1 {
   letter-spacing: 0.6px;
   text-transform: uppercase;
   padding: 0.55rem 0.95rem 0.5rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-btn);
   cursor: pointer;
   position: relative;
   transition: color 0.25s var(--ease), background 0.25s var(--ease);
@@ -525,4 +536,28 @@ h1 {
   .linktree-container {
     padding: 2.2rem 1.1rem;
   }
+  .button-group {
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extended bio page adjustments */
+body.extended-bio .section-title,
+body.extended-bio .snapshot-heading,
+body.extended-bio .snapshot-panel,
+body.extended-bio .snapshot-list,
+body.extended-bio h1.page-title {
+  text-align: left;
+}
+body.extended-bio .section-title::before {
+  left: 0;
+  transform: none;
+}
+body.extended-bio .page-title::after {
+  left: 0;
+  transform: none;
+  margin-left: 0;
 }
