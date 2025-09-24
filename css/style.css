@@ -131,6 +131,10 @@ h1 {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
+/* Slight enlargement adjustments for star icon */
+.star-link svg {
+  display: block;
+}
 
 /* Primary CTA */
 /* Unified pill button style */
@@ -575,6 +579,140 @@ body.extended-bio section p {
   width: 100%;
   max-width: 320px;
   margin: 1.4rem auto 0;
+}
+/* Recommendations page */
+body.recommendations-page main.linktree-container {
+  max-width: 960px;
+  padding-top: 1.8rem;
+}
+.recommendations-intro {
+  max-width: 700px;
+  margin: 0 0 1.4rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+.recommendations-grid {
+  width: 100%;
+  display: grid;
+  gap: 1.15rem 1.15rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 1.6rem;
+}
+.recommendations-grid figure {
+  margin: 0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.05rem 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  min-height: 170px;
+  outline: none;
+  overflow: hidden; /* allow accent bar to blend with rounded corners */
+}
+.recommendations-grid figure::before {
+  content: "";
+  position: absolute;
+  left: -1px; /* extend under border for seamless integration */
+  top: -1px;
+  width: calc(100% + 2px);
+  height: 8px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-alt) 100%);
+  opacity: 0.9;
+  z-index: 0;
+}
+.recommendations-grid figure:nth-child(2n)::before {
+  background: linear-gradient(90deg, var(--accent-alt) 0%, var(--accent) 100%);
+}
+.recommendations-grid figure > * {
+  position: relative;
+  z-index: 1;
+}
+.recommendations-grid blockquote::before {
+  content: "\201C"; /* opening smart quote */
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: var(--accent-soft);
+  pointer-events: none;
+  opacity: 0.5;
+}
+.recommendations-grid blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  font-style: normal;
+  position: relative;
+}
+.recommendations-grid blockquote p {
+  margin: 0;
+}
+.recommendations-grid figcaption {
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  line-height: 1.2;
+}
+.recommendations-grid figure:hover,
+.recommendations-grid figure:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-soft);
+}
+/* Accessible focus ring */
+.recommendations-grid figure:focus-visible {
+  box-shadow: var(--shadow-hover), var(--focus-ring);
+}
+/* Slightly balance longer lines on wide viewports */
+@supports (text-wrap: balance) {
+  body.recommendations-page .recommendations-intro {
+    text-wrap: balance;
+  }
+}
+@media (max-width: 600px) {
+  body.recommendations-page main.linktree-container {
+    padding-top: 1.2rem;
+  }
+  .recommendations-intro {
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+  }
+  .recommendations-grid {
+    gap: 0.95rem;
+    grid-template-columns: 1fr;
+  }
+  .recommendations-grid figure {
+    padding: 0.95rem 0.95rem 1.1rem;
+  }
+  .recommendations-grid blockquote {
+    font-size: 0.9rem;
+  }
+  .recommendations-grid blockquote::before {
+    font-size: 2.6rem;
+    top: 6px;
+    right: 10px;
+  }
+}
+@media (max-width: 380px) {
+  .recommendations-grid blockquote {
+    font-size: 0.88rem;
+  }
+  .recommendations-grid figure {
+    padding: 0.85rem 0.85rem 1rem;
+  }
 }
 /* Do not indent the first paragraph immediately following a section heading */
 /* (Removed previous :first-of-type override so first paragraphs are also indented) */
