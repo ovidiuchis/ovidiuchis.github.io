@@ -215,7 +215,8 @@ h1 {
 }
 @media (max-width: 480px) {
   .btn-narrow {
-    width: 90%;
+    width: clamp(260px, 90%, 320px);
+    max-width: calc(100% - 1rem);
   }
 }
 
