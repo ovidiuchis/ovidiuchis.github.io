@@ -561,3 +561,20 @@ body.extended-bio .page-title::after {
   transform: none;
   margin-left: 0;
 }
+/* Justify paragraph text only within content sections on extended bio page */
+body.extended-bio section p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  text-indent: 1.25rem;
+  margin-top: 0.95rem;
+}
+/* 404 page single action button centering */
+.single-action {
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  margin: 1.4rem auto 0;
+}
+/* Do not indent the first paragraph immediately following a section heading */
+/* (Removed previous :first-of-type override so first paragraphs are also indented) */
