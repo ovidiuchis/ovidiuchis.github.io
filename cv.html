@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV – Ovidiu Chiș</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <style>
+      /* CV-specific styles */
+      body.cv-page {
+        background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f5f7fa 100%);
+        min-height: 100vh;
+      }
+
+      .cv-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        background: #ffffff;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .cv-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding: 3rem 2rem 2.5rem;
+        background: #ffffff;
+      }
+
+      .cv-profile-photo {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #ffffff;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+        z-index: 10;
+      }
+
+      .cv-profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .cv-header h1 {
+        font-size: 3rem;
+        margin: 0 0 0.3rem;
+        color: var(--color-text);
+        letter-spacing: -0.8px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .cv-header h1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent) 0%, var(--accent-alt) 100%);
+      }
+
+      .cv-header .cv-title {
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-alt) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+        margin-bottom: 1.8rem;
+        margin-top: 1.2rem;
+        animation: fadeUp 0.6s var(--ease) both 0.1s;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+      }
+      .cv-contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 2rem;
+        font-size: 0.95rem;
+        color: var(--color-text-muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .cv-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.7rem 1.2rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50px;
+        transition: all 0.25s var(--ease);
+        border: 1px solid rgba(37, 99, 235, 0.15);
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+      }
+
+      .cv-contact-item:hover {
+        background: rgba(255, 255, 255, 1);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+      }
+
+      .cv-contact-item svg {
+        width: 19px;
+        height: 19px;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .cv-contact-item a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition: color 0.25s var(--ease);
+      }
+
+      .cv-contact-item a:hover {
+        color: var(--accent);
+      }
+
+      .cv-section {
+        margin-bottom: 3rem;
+        animation: fadeUp 0.6s var(--ease) both;
+        position: relative;
+      }
+
+      .cv-section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+        padding-left: 1rem;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .cv-section-title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0.8rem;
+        width: 4px;
+        background: linear-gradient(180deg, var(--accent) 0%, var(--accent-alt) 100%);
+        border-radius: 2px;
+      }
+
+      .cv-section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(37, 99, 235, 0.3) 0%, rgba(99, 102, 241, 0.1) 50%, transparent 100%);
+      }
+
+      .cv-item {
+        margin-bottom: 2rem;
+        page-break-inside: avoid;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.01) 0%, rgba(99, 102, 241, 0.02) 100%);
+        border-radius: 0;
+        border-left: 3px solid transparent;
+        transition: all 0.3s var(--ease);
+        position: relative;
+      }
+
+      .cv-item:hover {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(99, 102, 241, 0.04) 100%);
+        border-left-color: var(--accent);
+        transform: translateX(2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+      }
+
+      .cv-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.8rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .cv-item-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--color-text);
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      .cv-item-title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-alt) 100%);
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+
+      .cv-item-date {
+        font-size: 0.88rem;
+        color: var(--color-text-faint);
+        font-weight: 600;
+        background: rgba(37, 99, 235, 0.08);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        letter-spacing: 0.3px;
+      }
+
+      .cv-item-subtitle {
+        font-size: 1rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .cv-item-location {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        font-style: italic;
+        margin-bottom: 0.7rem;
+      }
+
+      .cv-item-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--color-text);
+        margin-bottom: 0.7rem;
+      }
+
+      .cv-item-list {
+        margin: 0.7rem 0;
+        padding-left: 1.5rem;
+      }
+
+      .cv-item-list li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--color-text);
+        margin-bottom: 0.4rem;
+      }
+
+      .cv-skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .cv-skill-category {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(99, 102, 241, 0.08) 100%);
+        padding: 1.2rem;
+        border-radius: 0;
+        border-left: 4px solid var(--accent);
+        transition: all 0.3s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cv-skill-category::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s var(--ease);
+      }
+
+      .cv-skill-category:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+        border-left-width: 6px;
+      }
+
+      .cv-skill-category:hover::before {
+        opacity: 1;
+      }
+
+      .cv-skill-category-title {
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.6rem;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .cv-skill-category-items {
+        font-size: 0.92rem;
+        color: var(--color-text);
+        line-height: 1.6;
+      }
+
+      .cv-actions {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        gap: 0.75rem;
+        z-index: 100;
+      }
+
+      .cv-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.2rem;
+        border-radius: var(--radius-btn);
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        transition: all 0.25s var(--ease);
+      }
+
+      .cv-btn:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .cv-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .cv-btn-secondary {
+        background: var(--accent-alt);
+      }
+
+      .cv-btn-secondary:hover {
+        background: var(--accent-alt-hover);
+      }
+
+      .cv-profile {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(99, 102, 241, 0.08) 100%);
+        padding: 1.8rem;
+        border-radius: 0;
+        border-left: 4px solid var(--accent-alt);
+        margin-bottom: 2.5rem;
+        font-size: 0.98rem;
+        line-height: 1.8;
+        color: var(--color-text);
+        position: relative;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+      }
+
+      .cv-profile strong {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* Table of Contents */
+      .cv-toc {
+        position: fixed;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-left: 3px solid var(--accent);
+        padding: 1.5rem 1.2rem;
+        border-radius: 0;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+        max-width: 220px;
+        z-index: 50;
+        transition: all 0.3s var(--ease);
+      }
+
+      .cv-toc:hover {
+        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.25);
+      }
+
+      .cv-toc-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+      }
+
+      .cv-toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .cv-toc-item {
+        margin-bottom: 0.7rem;
+      }
+
+      .cv-toc-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition: all 0.25s var(--ease);
+        padding: 0.3rem 0;
+        position: relative;
+      }
+
+      .cv-toc-link::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        flex-shrink: 0;
+        opacity: 0.3;
+        transition: all 0.25s var(--ease);
+      }
+
+      .cv-toc-link:hover {
+        color: var(--accent);
+        transform: translateX(3px);
+      }
+
+      .cv-toc-link:hover::before {
+        opacity: 1;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      }
+
+      .cv-toc-link.active {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .cv-toc-link.active::before {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+
+      @media print {
+        body.cv-page {
+          background: #ffffff !important;
+        }
+
+        .cv-container {
+          max-width: 100%;
+          padding: 0;
+          background: #ffffff !important;
+          box-shadow: none !important;
+        }
+
+        .cv-actions {
+          display: none !important;
+        }
+
+        .cv-toc {
+          display: none !important;
+        }
+
+        .cv-profile-photo {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .cv-section {
+          page-break-inside: avoid;
+        }
+
+        .cv-item {
+          page-break-inside: avoid;
+        }
+
+        .cv-header {
+          page-break-after: avoid;
+        }
+
+        .cv-profile {
+          background: #f8f9fa !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .cv-skill-category {
+          background: #f0f4ff !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .cv-toc {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body.cv-page {
+          background: #ffffff;
+        }
+
+        .cv-container {
+          padding: 1rem 1rem;
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        .cv-actions {
+          display: none !important;
+        }
+
+        .cv-toc {
+          display: none !important;
+        }
+
+        .cv-header {
+          padding: 2rem 1rem 1.5rem;
+        }
+
+        .cv-header h1 {
+          font-size: 2rem;
+          letter-spacing: -0.5px;
+          padding-bottom: 0.8rem;
+        }
+
+        .cv-header h1::after {
+          width: 60px;
+          height: 2px;
+        }
+
+        .cv-header .cv-title {
+          font-size: 0.95rem;
+          margin-bottom: 1.2rem;
+          margin-top: 0.8rem;
+        }
+
+        .cv-profile-photo {
+          width: 80px;
+          height: 80px;
+          top: 1rem;
+          right: 1rem;
+          border-width: 3px;
+        }
+
+        .cv-contact {
+          flex-direction: column;
+          gap: 0.6rem;
+          align-items: stretch;
+        }
+
+        .cv-contact-item {
+          padding: 0.6rem 1rem;
+          justify-content: flex-start;
+        }
+
+        .cv-profile {
+          padding: 1.2rem;
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .cv-section {
+          margin-bottom: 2rem;
+        }
+
+        .cv-section-title {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          padding-left: 0.8rem;
+        }
+
+        .cv-section-title::before {
+          width: 3px;
+        }
+
+        .cv-item {
+          padding: 1rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .cv-item-title {
+          font-size: 1rem;
+          padding-left: 0.8rem;
+        }
+
+        .cv-item-title::before {
+          width: 5px;
+          height: 5px;
+        }
+
+        .cv-item-date {
+          font-size: 0.8rem;
+          padding: 0.25rem 0.6rem;
+        }
+
+        .cv-item-subtitle {
+          font-size: 0.95rem;
+        }
+
+        .cv-item-description,
+        .cv-item-list li {
+          font-size: 0.88rem;
+          line-height: 1.5;
+        }
+
+        .cv-skills-grid {
+          grid-template-columns: 1fr;
+          gap: 0.8rem;
+        }
+
+        .cv-skill-category {
+          padding: 1rem;
+        }
+
+        .cv-skill-category-title {
+          font-size: 0.88rem;
+        }
+
+        .cv-skill-category-items {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cv-header h1 {
+          font-size: 1.75rem;
+        }
+
+        .cv-header .cv-title {
+          font-size: 0.85rem;
+        }
+
+        .cv-section-title {
+          font-size: 1.1rem;
+        }
+
+        .cv-item-title {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="cv-page">
+    <div class="cv-actions">
+      <button onclick="exportToPDF()" class="cv-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        Exportă PDF
+      </button>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="cv-toc">
+      <div class="cv-toc-title">Cuprins</div>
+      <ul class="cv-toc-list">
+        <li class="cv-toc-item">
+          <a href="#experienta" class="cv-toc-link">Experiență</a>
+        </li>
+        <li class="cv-toc-item">
+          <a href="#educatie" class="cv-toc-link">Educație</a>
+        </li>
+        <li class="cv-toc-item">
+          <a href="#competente" class="cv-toc-link">Competențe</a>
+        </li>
+        <li class="cv-toc-item">
+          <a href="#proiecte" class="cv-toc-link">Proiecte</a>
+        </li>
+        <li class="cv-toc-item">
+          <a href="#limbi" class="cv-toc-link">Limbi</a>
+        </li>
+        <li class="cv-toc-item">
+          <a href="#info" class="cv-toc-link">Info Suplimentare</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="cv-container" id="cv-content">
+      <header class="cv-header">
+        <div class="cv-profile-photo">
+          <img src="assets/me.png" alt="Ovidiu Chiș" />
+        </div>
+        <h1>Ovidiu Chiș</h1>
+        <div class="cv-title">Engineering Manager</div>
+        <div class="cv-contact">
+          <div class="cv-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <a href="mailto:ovidiu@asis.ro">ovidiu@asis.ro</a>
+          </div>
+          <div class="cv-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            <span>0730 020 215</span>
+          </div>
+          <div class="cv-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Cluj-Napoca, România</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="cv-profile">
+        <strong>Profil Profesional:</strong> Cu peste 15 ani de experiență în construirea și livrarea de sisteme software
+        pentru companii medii și mari, ajut echipe să transforme procese complexe în soluții web robuste și instrumente
+        operaționale—ERP, WMS și fluxuri automate de lucru cu date—oferind claritate, viteză și impact măsurabil în
+        activitatea zilnică.
+      </div>
+
+      <section id="experienta" class="cv-section">
+        <h2 class="cv-section-title">Experiență Profesională</h2>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Software Engineering Manager</div>
+            <div class="cv-item-date">Ian. 2022 – Prezent · 3 ani 11 luni</div>
+          </div>
+          <div class="cv-item-subtitle">Alfa Software</div>
+          <div class="cv-item-location">Cluj-Napoca, România</div>
+          <div class="cv-item-description">
+            Coordonez dezvoltarea tehnică și livrarea de soluții software pentru produsele interne și proiectele clienților,
+            asigurând alinierea între obiectivele business și execuția tehnică.
+          </div>
+          <ul class="cv-item-list">
+            <li>Gestionarea proiectelor tehnice interne și a proiectelor partenerilor, de la planificare până la livrare</li>
+            <li>Dezvoltarea și mentorat echipei de dezvoltare, conducerea interviurilor și training pentru angajați noi</li>
+            <li>Stabilirea standardelor de cod, best practices și procese de dezvoltare pentru asigurarea calității</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Senior Software Engineer</div>
+            <div class="cv-item-date">Ian. 2016 – Ian. 2022 · 6 ani 1 lună</div>
+          </div>
+          <div class="cv-item-subtitle">Alfa Software</div>
+          <div class="cv-item-location">Cluj-Napoca, România</div>
+          <div class="cv-item-description">
+            Lucrez în R&D, arhitectură, dezvoltare și management de proiect pe mai multe module pentru un sistem ERP
+            proprietar (precum Production Management, Contract Management, Invoice-Billing, Managers Dashboard și altele) și
+            module pentru sisteme de Customer Relationship Management (precum mobile Sales Force Automation, mobile
+            Marketing).
+          </div>
+          <ul class="cv-item-list">
+            <li>Acționez ca product lead în engagement-uri cu clienții</li>
+            <li>Definirea strategiei de produs și dezvoltarea de funcționalități noi</li>
+            <li>Realizarea punții de legătură între business și dezvoltare</li>
+            <li>Monitorizarea progresului și execuției proiectelor lucrând strâns cu echipa</li>
+            <li>Participarea în întâlniri cu clienții și prezentări de vânzări</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Software Engineer</div>
+            <div class="cv-item-date">Oct. 2010 – Ian. 2016 · 5 ani 4 luni</div>
+          </div>
+          <div class="cv-item-subtitle">Alfa Software</div>
+          <div class="cv-item-location">Cluj-Napoca, România</div>
+          <div class="cv-item-description">Dezvoltare de aplicații și mentenanță pentru produsul ASiSerp.</div>
+          <ul class="cv-item-list">
+            <li>Design și dezvoltare baze de date folosind T-SQL în MS SQL Server</li>
+            <li>Dezvoltare și mentenanță webservices .Net</li>
+            <li>
+              Dezvoltare framework de aplicații web folosind Adobe Flex AS3 numit ASiSria și framework de aplicații mobile
+              ASiSmobile, ambele folosite pentru construirea rapidă de aplicații business complexe
+            </li>
+            <li>Lucru pe mai multe module pentru produsul ASiSerp</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Intern in Software Development</div>
+            <div class="cv-item-date">Iun. 2010 – Iul. 2010 · 2 luni</div>
+          </div>
+          <div class="cv-item-subtitle">Yonder</div>
+          <div class="cv-item-location">Cluj-Napoca, România</div>
+          <div class="cv-item-description">Internship în dezvoltare software.</div>
+          <ul class="cv-item-list">
+            <li>Învățare: OpenEdge ABL, OERA Architecture</li>
+            <li>
+              Dezvoltarea unui ORM mic folosind Progress OpenEdge pe backend și tehnologii .Net pentru interfața utilizator
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="educatie" class="cv-section">
+        <h2 class="cv-section-title">Educație</h2>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Master of Computer Science, Databases</div>
+            <div class="cv-item-date">2011 – 2013</div>
+          </div>
+          <div class="cv-item-subtitle">Universitatea „Babeș-Bolyai" din Cluj-Napoca</div>
+          <div class="cv-item-location">Cluj-Napoca, România · Grade: MSc</div>
+          <div class="cv-item-description">
+            <strong>Titlu teză disertație:</strong> "Data visualization and automated report generation framework"
+          </div>
+          <div class="cv-item-description">
+            Am dezvoltat o aplicație de vizualizare date folosind framework-ul care permite analiză avansată de date prin
+            funcționalități precum: data deconstruction și pivoting, sortare și filtrare pe mai multe niveluri.
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Bachelor of Computer Science, Computer Science</div>
+            <div class="cv-item-date">2008 – 2011</div>
+          </div>
+          <div class="cv-item-subtitle">Universitatea „Babeș-Bolyai" din Cluj-Napoca</div>
+          <div class="cv-item-location">Cluj-Napoca, România · Grade: BSc</div>
+          <div class="cv-item-description">
+            <strong>Titlu teză licență:</strong> "Using XML based client-server protocols to communicate between
+            heterogeneous systems"
+          </div>
+          <div class="cv-item-description">
+            Am dezvoltat un framework de business intelligence (bazat pe browser) care afișează KPI-uri sub formă de grafice
+            sau tabele (folosit pentru a ilustra comunicarea între SQL Server și Adobe Flex web app bazat pe XML).
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Bacalaureat</div>
+            <div class="cv-item-date">2004 – 2008</div>
+          </div>
+          <div class="cv-item-subtitle">Liceul Tiberiu Popoviciu</div>
+          <div class="cv-item-location">Cluj-Napoca, România</div>
+          <div class="cv-item-description">Matematică și Informatică, specializarea Matematică și Informatică</div>
+        </div>
+      </section>
+
+      <section id="competente" class="cv-section">
+        <h2 class="cv-section-title">Competențe Tehnice</h2>
+
+        <div class="cv-skills-grid">
+          <div class="cv-skill-category">
+            <div class="cv-skill-category-title">Limbaje de Programare</div>
+            <div class="cv-skill-category-items">C#, .NET Framework/Core, JavaScript, SQL, Python</div>
+          </div>
+
+          <div class="cv-skill-category">
+            <div class="cv-skill-category-title">Tehnologii Web</div>
+            <div class="cv-skill-category-items">ASP.NET, API's, HTML5, CSS3, Angular</div>
+          </div>
+
+          <div class="cv-skill-category">
+            <div class="cv-skill-category-title">Baze de Date</div>
+            <div class="cv-skill-category-items">SQL Server, MySQL, Supabase T-SQL</div>
+          </div>
+
+          <div class="cv-skill-category">
+            <div class="cv-skill-category-title">DevOps & Tools</div>
+            <div class="cv-skill-category-items">Git, Azure DevOps, CI/CD, PowerShell</div>
+          </div>
+
+          <div class="cv-skill-category">
+            <div class="cv-skill-category-title">Sisteme & Arhitecturi</div>
+            <div class="cv-skill-category-items">ERP/WMS, Microservices, Cloud (Azure), System Integration</div>
+          </div>
+
+          <div class="cv-skill-category">
+            <div class="cv-skill-category-title">Management</div>
+            <div class="cv-skill-category-items">Agile/Scrum, Team Leadership, Mentoring, Project Management</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proiecte" class="cv-section">
+        <h2 class="cv-section-title">Proiecte Semnificative</h2>
+
+        <div class="cv-profile" style="margin-bottom: 2rem; font-style: italic">
+          De-a lungul carierei am participat la implementarea a <strong>peste 40 de proiecte client</strong> și la
+          dezvoltarea a <strong>mai mult de 10 module ASiSerp</strong>, acoperind diverse industrii și nevoi business
+          complexe.
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-title">Dezvoltare de module ASiSerp</div>
+          <div class="cv-item-subtitle"><a href="https://www.asw.ro/" target="_blank" rel="noopener">Alfa Software</a></div>
+          <div class="cv-item-description">
+            Dezvoltare și implementare module complexe pentru sistemul ERP proprietar ASiSerp, folosit de zeci de companii
+            din România.
+          </div>
+          <ul class="cv-item-list">
+            <li>
+              <strong>Modul Producție:</strong> Gestiunea completă a proceselor de producție, de la planificare la execuție
+              și raportare
+            </li>
+            <li>
+              <strong>Modul Contracte:</strong> Management integrat al ciclului complet de contracte, de la creare până la
+              finalizare
+            </li>
+            <li>
+              <strong>Modul eFactura:</strong> Implementare integrare cu sistemul național de e-facturare (RO
+              e-Factura/e-Transport)
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-title">Interfață SAP pentru Printzhorn Grup</div>
+          <div class="cv-item-subtitle">
+            <a href="https://www.hamburger-recycling.com/ro/" target="_blank" rel="noopener"
+              >Hamburger Recycling (Printzhorn Group)</a
+            >
+          </div>
+          <div class="cv-item-description">
+            Proiectare și implementare interfață de comunicare între sistemul ASiSerp și SAP pentru un grup industrial
+            internațional.
+          </div>
+          <ul class="cv-item-list">
+            <li>Dezvoltare servicii de integrare bidirectionale pentru sincronizare date în timp real</li>
+            <li>Transfer automat comenzi, stocuri, facturi și date financiare între sisteme</li>
+            <li>Implementare mecanisme de reconciliere și raportare erori</li>
+            <li>Monitorizare continuă și logging avansat pentru diagnostic rapid</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-title">Sistem de trasabilitate producție pentru MontBlanc Industri</div>
+          <div class="cv-item-subtitle">
+            <a href="https://www.montblancgroup.com/en" target="_blank" rel="noopener">MontBlanc Group</a>
+          </div>
+          <div class="cv-item-description">
+            Implementare sistem complet de urmărire și raportare a proceselor de producție pentru industria auto.
+          </div>
+          <ul class="cv-item-list">
+            <li>Tracking complet de la materie primă până la produs finit</li>
+            <li>Integrare cu echipamente industriale și senzori IoT</li>
+            <li>Raportare în timp real și dashboard-uri pentru managementul producției</li>
+            <li>Conformitate cu standardele de calitate și certificări din industria auto</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-title">Optimizare producție vehicule speciale</div>
+          <div class="cv-item-subtitle"><a href="https://www.deltamed.ro/" target="_blank" rel="noopener">Deltamed</a></div>
+          <div class="cv-item-description">
+            Dezvoltare soluție software pentru optimizarea proceselor de producție pentru fabricarea de vehicule speciale.
+          </div>
+          <ul class="cv-item-list">
+            <li>Vedere 360 a producției bazată pe comenzi și resurse disponibile</li>
+            <li>Gestiune complexă a BOM-urilor (Bill of Materials) multi-nivel</li>
+            <li>Calcul automat costuri și estimări timpi de livrare</li>
+            <li>Reducerea timpului de planificare și îmbunătățire utilizare resurse</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="limbi" class="cv-section">
+        <h2 class="cv-section-title">Limbi Străine</h2>
+
+        <div class="cv-item">
+          <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+            <div><strong>Română:</strong> <span style="color: var(--color-text-muted)">Nativ</span></div>
+            <div>
+              <strong>Engleză:</strong> <span style="color: var(--color-text-muted)">Professional working proficiency</span>
+            </div>
+            <div>
+              <strong>Franceză:</strong> <span style="color: var(--color-text-muted)">Limited working proficiency</span>
+            </div>
+            <div><strong>Germană:</strong> <span style="color: var(--color-text-muted)">Elementary proficiency</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="info" class="cv-section">
+        <h2 class="cv-section-title">Informații Suplimentare</h2>
+
+        <div class="cv-item">
+          <ul class="cv-item-list">
+            <li>
+              <strong>Contribuții Open Source:</strong> Proiecte și experimente publicate pe GitHub pentru automatizare și
+              utilități
+            </li>
+            <li>
+              <strong>Voluntariat:</strong> Suport tehnic pentru organizații non-profit și proiecte sociale prin tehnologie
+            </li>
+            <li>
+              <strong>Învățare Continuă:</strong> Cititor activ de literatură tehnică și business, participare la conferințe
+              și evenimente tech
+            </li>
+            <li><strong>Disponibilitate:</strong> Permis conducere categoria B, disponibil pentru călătorii ocazionale</li>
+          </ul>
+        </div>
+      </section>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 3rem;
+          padding-top: 1.5rem;
+          border-top: 1px solid var(--color-border);
+          color: var(--color-text-faint);
+          font-size: 0.85rem;
+        "
+      >
+        Acord GDPR: Sunt de acord ca datele personale incluse în acest CV să fie prelucrate în scopul procesului de
+        recrutare, în conformitate cu Regulamentul (UE) 2016/679.
+      </div>
+    </div>
+
+    <script>
+      function exportToPDF() {
+        // Use native browser print to PDF
+        window.print();
+      }
+
+      // Table of Contents functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const tocLinks = document.querySelectorAll(".cv-toc-link");
+        const sections = document.querySelectorAll(".cv-section[id]");
+
+        // Smooth scroll
+        tocLinks.forEach(link => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+
+        // Highlight active section on scroll
+        function highlightActiveSection() {
+          let scrollPosition = window.scrollY + 150;
+
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              tocLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }
+
+        window.addEventListener("scroll", highlightActiveSection);
+        highlightActiveSection(); // Initial call
+      });
+    </script>
+  </body>
+</html>
