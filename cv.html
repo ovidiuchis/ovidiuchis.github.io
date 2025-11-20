@@ -467,11 +467,13 @@
       @media print {
         body.cv-page {
           background: #ffffff !important;
+          font-size: 11pt;
         }
 
         .cv-container {
           max-width: 100%;
           padding: 0;
+          margin: 0;
           background: #ffffff !important;
           box-shadow: none !important;
         }
@@ -485,37 +487,174 @@
         }
 
         .cv-profile-photo {
+          width: 90px !important;
+          height: 90px !important;
+          top: 1.5rem !important;
+          right: 2rem !important;
+          border-width: 3px !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .cv-header {
+          padding: 1.5rem 1rem 1rem !important;
+          margin-bottom: 0.8rem !important;
+          page-break-after: avoid;
+        }
+
+        .cv-header h1 {
+          font-size: 2rem !important;
+          margin: 0 0 0.2rem !important;
+          padding-bottom: 0.6rem !important;
+        }
+
+        .cv-header h1::after {
+          width: 60px !important;
+          height: 2px !important;
+        }
+
+        .cv-header .cv-title {
+          font-size: 0.95rem !important;
+          margin-bottom: 1rem !important;
+          margin-top: 0.6rem !important;
+        }
+
+        .cv-contact {
+          gap: 0.5rem 1rem !important;
+          font-size: 0.8rem !important;
+          flex-wrap: nowrap !important;
+          justify-content: center !important;
+          flex-direction: row !important;
+        }
+
+        .cv-contact-item {
+          padding: 0.4rem 0.8rem !important;
+          border: 1px solid #e5e7eb !important;
+          box-shadow: none !important;
+          white-space: nowrap !important;
+          flex: 0 0 auto !important;
+        }
+
+        .cv-contact-item svg {
+          width: 14px !important;
+          height: 14px !important;
+        }
+
+        .cv-profile {
+          background: #f8f9fa !important;
+          padding: 0.8rem !important;
+          margin-bottom: 1rem !important;
+          font-size: 0.85rem !important;
+          line-height: 1.5 !important;
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
         }
 
         .cv-section {
+          margin-bottom: 1.2rem !important;
           page-break-inside: avoid;
+        }
+
+        .cv-section-title {
+          font-size: 1.1rem !important;
+          margin-bottom: 0.6rem !important;
+          padding-bottom: 0.4rem !important;
+          padding-left: 0.8rem !important;
+        }
+
+        .cv-section-title::before {
+          width: 3px !important;
+        }
+
+        .cv-section-title::after {
+          height: 1px !important;
         }
 
         .cv-item {
+          margin-bottom: 0.8rem !important;
+          padding: 0.6rem 0.8rem !important;
+          background: #fafbfc !important;
           page-break-inside: avoid;
         }
 
-        .cv-header {
-          page-break-after: avoid;
+        .cv-item-header {
+          margin-bottom: 0.4rem !important;
         }
 
-        .cv-profile {
-          background: #f8f9fa !important;
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
+        .cv-item-title {
+          font-size: 0.95rem !important;
+          padding-left: 0.8rem !important;
+        }
+
+        .cv-item-title::before {
+          width: 5px !important;
+          height: 5px !important;
+        }
+
+        .cv-item-date {
+          font-size: 0.75rem !important;
+          padding: 0.2rem 0.5rem !important;
+        }
+
+        .cv-item-subtitle {
+          font-size: 0.85rem !important;
+          margin-bottom: 0.3rem !important;
+        }
+
+        .cv-item-location {
+          font-size: 0.8rem !important;
+          margin-bottom: 0.4rem !important;
+        }
+
+        .cv-item-description {
+          font-size: 0.82rem !important;
+          line-height: 1.4 !important;
+          margin-bottom: 0.4rem !important;
+        }
+
+        .cv-item-list {
+          margin: 0.4rem 0 !important;
+          padding-left: 1.2rem !important;
+        }
+
+        .cv-item-list li {
+          font-size: 0.82rem !important;
+          line-height: 1.4 !important;
+          margin-bottom: 0.25rem !important;
+        }
+
+        .cv-skills-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 0.6rem !important;
         }
 
         .cv-skill-category {
           background: #f0f4ff !important;
+          padding: 0.6rem 0.8rem !important;
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
+        }
+
+        .cv-skill-category-title {
+          font-size: 0.8rem !important;
+          margin-bottom: 0.4rem !important;
+        }
+
+        .cv-skill-category-items {
+          font-size: 0.78rem !important;
+          line-height: 1.4 !important;
         }
 
         a {
           color: inherit !important;
           text-decoration: none !important;
+        }
+
+        /* Remove extra spacing from GDPR footer */
+        #cv-content > div[style] {
+          margin-top: 1.5rem !important;
+          padding-top: 0.8rem !important;
+          font-size: 0.75rem !important;
         }
       }
 
@@ -1030,20 +1169,6 @@
           </ul>
         </div>
       </section>
-
-      <div
-        style="
-          text-align: center;
-          margin-top: 3rem;
-          padding-top: 1.5rem;
-          border-top: 1px solid var(--color-border);
-          color: var(--color-text-faint);
-          font-size: 0.85rem;
-        "
-      >
-        Acord GDPR: Sunt de acord ca datele personale incluse în acest CV să fie prelucrate în scopul procesului de
-        recrutare, în conformitate cu Regulamentul (UE) 2016/679.
-      </div>
     </div>
 
     <script>
