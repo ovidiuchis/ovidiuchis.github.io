@@ -2,10 +2,61 @@
 body {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   margin: 0;
-  background: radial-gradient(circle at 25% 20%, rgba(99, 102, 241, 0.16), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.18), transparent 65%),
-    linear-gradient(145deg, #f1f5f9 0%, #f8fafc 70%);
+  background: #f0f7ff;
+  position: relative;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Aurora Borealis background effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse 1000px 800px at 20% 30%, rgba(56, 189, 248, 0.65) 0%, transparent 65%),
+    radial-gradient(ellipse 900px 900px at 60% 70%, rgba(167, 243, 208, 0.7) 0%, transparent 65%),
+    radial-gradient(ellipse 1100px 700px at 80% 20%, rgba(186, 230, 253, 0.75) 0%, transparent 65%),
+    radial-gradient(ellipse 800px 1000px at 40% 80%, rgba(125, 211, 252, 0.65) 0%, transparent 65%),
+    radial-gradient(ellipse 950px 850px at 10% 60%, rgba(224, 242, 254, 0.8) 0%, transparent 65%);
+  animation: aurora 25s ease-in-out infinite;
+  z-index: 0;
+  filter: blur(90px);
+  opacity: 1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.15) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    transform: translate(0%, 0%) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(10%, 15%) rotate(5deg) scale(1.1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(-5%, 20%) rotate(-3deg) scale(1.05);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(15%, -10%) rotate(7deg) scale(1.08);
+    opacity: 0.95;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -15,33 +66,33 @@ html {
   /* New button radius for a squarer look */
   --radius-btn: 10px;
   --ease: cubic-bezier(0.4, 0.08, 0.2, 1);
-  --shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 12px -4px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 4px 16px -4px rgba(0, 0, 0, 0.12);
-  --border: #e5e5e7;
-  --accent: #2563eb; /* new primary button color (blue) */
-  --accent-hover: #1d4ed8;
-  --accent-soft: #eff6ff;
-  --accent-alt: #6366f1; /* secondary button (indigo) */
-  --accent-alt-hover: #4f46e5;
-  --primary: #222;
+  --shadow: 0 2px 4px rgba(56, 189, 248, 0.15), 0 4px 12px -4px rgba(14, 165, 233, 0.2);
+  --shadow-hover: 0 4px 16px -4px rgba(14, 165, 233, 0.3), 0 0 20px rgba(56, 189, 248, 0.25);
+  --border: #bae6fd;
+  --accent: #0284c7; /* deeper sky blue */
+  --accent-hover: #0369a1;
+  --accent-soft: #e0f2fe;
+  --accent-alt: #0891b2; /* deeper cyan */
+  --accent-alt-hover: #0e7490;
+  --primary: #0c4a6e;
   --radius-pill: 999px;
-  --shadow: 0 2px 4px rgba(15, 39, 80, 0.06), 0 4px 12px -4px rgba(15, 39, 80, 0.1);
-  --shadow-hover: 0 6px 22px -6px rgba(15, 39, 80, 0.22);
-  --color-bg: #f1f5f9;
-  --color-bg-alt: #ffffff;
-  --color-panel: #ffffff;
-  --color-border: #cbd5e1;
-  --color-border-strong: #94a3b8;
-  --color-text: #1e293b;
-  --color-text-muted: #475569;
-  --color-text-faint: #64748b;
-  --accent-soft: #e0edff;
-  --accent-glow: rgba(37, 99, 235, 0.35);
-  --accent-alt-soft: #ecebff;
+  --shadow: 0 2px 4px rgba(56, 189, 248, 0.12), 0 4px 12px -4px rgba(14, 165, 233, 0.18);
+  --shadow-hover: 0 6px 22px -6px rgba(14, 165, 233, 0.45), 0 0 25px rgba(56, 189, 248, 0.3);
+  --color-bg: #f0f9ff;
+  --color-bg-alt: rgba(255, 255, 255, 0.75);
+  --color-panel: rgba(255, 255, 255, 0.85);
+  --color-border: rgba(186, 230, 253, 0.5);
+  --color-border-strong: rgba(125, 211, 252, 0.7);
+  --color-text: #0a2540;
+  --color-text-muted: #0c4a6e;
+  --color-text-faint: #075985;
+  --accent-soft: rgba(14, 165, 233, 0.15);
+  --accent-glow: rgba(14, 165, 233, 0.4);
+  --accent-alt-soft: rgba(6, 182, 212, 0.15);
   --color-success: #059669;
   --color-warning: #d97706;
   --color-danger: #dc2626;
-  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.35);
+  --focus-ring: 0 0 0 3px rgba(14, 165, 233, 0.35);
 }
 
 /* Reset removed legacy header/section/footer styles */
@@ -63,6 +114,8 @@ footer {
   margin: 0 auto;
   text-align: center;
   gap: 0.4rem; /* tighten vertical rhythm slightly */
+  position: relative;
+  z-index: 1;
 }
 /* Removed tall screen extra top padding to keep perfect centering */
 
@@ -73,7 +126,7 @@ footer {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 0 5px #fff, 0 6px 22px -6px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 0 5px rgba(186, 230, 253, 0.5), 0 6px 22px -6px rgba(14, 165, 233, 0.3), 0 0 40px rgba(56, 189, 248, 0.2);
   margin: 0 0 1.2rem;
   animation: fadeUp 0.6s var(--ease) both 0.05s;
 }
@@ -82,6 +135,7 @@ h1 {
   letter-spacing: 0.5px;
   margin: 0.25rem 0 0.75rem;
   font-weight: 600;
+  color: #0a2540;
   animation: fadeUp 0.55s var(--ease) both 0.12s;
 }
 .linktree-container h1 {
@@ -116,9 +170,10 @@ h1 {
   justify-content: center;
   font-weight: 600;
   font-size: 0.95rem;
-  background: #fff;
-  border: 1px solid var(--border);
-  color: var(--primary);
+  background: var(--color-panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
   text-decoration: none;
   box-shadow: var(--shadow);
   transition: background 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease),
@@ -130,6 +185,7 @@ h1 {
   color: #fff;
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
 }
 /* Slight enlargement adjustments for star icon */
 .star-link svg {
@@ -175,7 +231,7 @@ h1 {
 .btn-pill:focus {
   background: var(--accent-hover);
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 10px 28px -10px rgba(2, 132, 199, 0.5), 0 0 35px rgba(56, 189, 248, 0.45);
 }
 
 /* Secondary variant (Save contact) */
@@ -243,7 +299,8 @@ h1 {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color-panel);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
@@ -271,7 +328,8 @@ h1 {
 /* Snapshot panel styles */
 .snapshot-panel {
   width: 100%;
-  background: linear-gradient(135deg, var(--accent-soft), #ffffff 60%);
+  background: var(--color-panel);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.15rem 1.2rem 1.25rem;
@@ -481,17 +539,15 @@ h1 {
 .group {
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-alt);
+  background: var(--color-panel);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   display: block;
   width: 100%;
   padding: 0.95rem 1.15rem;
   border-radius: var(--radius);
-  background: #fff;
-  border: 1px solid var(--border);
   text-decoration: none;
-  color: var(--primary);
   font-weight: 500;
   font-size: 1.02rem;
   letter-spacing: 0.2px;
@@ -505,7 +561,8 @@ h1 {
 .lt-link:hover,
 .lt-link:focus {
   background: var(--accent-soft);
-  color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-hover);
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
@@ -572,6 +629,11 @@ body.extended-bio section p {
   hyphens: auto;
   text-indent: 1.25rem;
   margin-top: 0.95rem;
+  color: var(--color-text);
+}
+body.extended-bio section p a {
+  color: var(--accent-hover);
+  text-decoration: underline;
 }
 /* 404 page single action button centering */
 .single-action {

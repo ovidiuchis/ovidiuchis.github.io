@@ -10,9 +10,30 @@
     <style>
       /* CV-specific styles */
       body.cv-page {
-        background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f5f7fa 100%);
+        background: #ffffff;
         min-height: 100vh;
         font-family: "Poppins", sans-serif;
+      }
+
+      /* Override aurora effect for formal CV */
+      body.cv-page::before,
+      body.cv-page::after {
+        display: none;
+      }
+
+      /* Light theme colors for formal CV */
+      body.cv-page {
+        --color-text: #1e293b;
+        --color-text-muted: #475569;
+        --color-text-faint: #64748b;
+        --color-bg: #f8fafc;
+        --color-bg-alt: #ffffff;
+        --color-panel: #ffffff;
+        --color-border: #e2e8f0;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --accent-alt: #6366f1;
+        --accent-alt-hover: #4f46e5;
       }
 
       .cv-container {
